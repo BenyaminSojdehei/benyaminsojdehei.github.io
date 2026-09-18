@@ -1,1 +1,447 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Benjamin Sojdehei | Industrial Engineering</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fa;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111827;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.05;
+            color: #111827;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #2563eb;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 35px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 12px 22px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #d1d5db;
+            color: #374151;
+            background: white;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 8%;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 35px;
+            color: #111827;
+        }
+
+        .about {
+            background: #f7f8fa;
+        }
+
+        .about p {
+            font-size: 17px;
+            color: #4b5563;
+            max-width: 850px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .card p {
+            color: #6b7280;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #e8eefc;
+            color: #2563eb;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #111827;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 60px 7%;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Benjamin Sojdehei</div>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Benjamin<br>Sojdehei</h1>
+
+        <h2>
+            Industrial Engineering · Data-Driven Decision Making · Quality
+        </h2>
+
+        <p>
+            Final-year Industrial Engineering student with experience in
+            manufacturing, quality assurance, process improvement, data
+            analysis, and operations research.
+        </p>
+
+        <div class="buttons">
+            <a class="primary" href="#research">View My Research</a>
+            <a class="secondary" href="#contact">Get in Touch</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I am a final-year B.Sc. Industrial Engineering student at Islamic
+        Azad University, Karaj Branch. My academic and professional interests
+        lie at the intersection of industrial engineering, data-driven
+        decision making, optimization, quality management, and operational
+        performance improvement.
+    </p>
+
+</section>
+
+
+<section id="research">
+
+    <h2>Research Interests</h2>
+
+    <div class="tags">
+
+        <span class="tag">Operations Research</span>
+        <span class="tag">Optimization</span>
+        <span class="tag">Data-Driven Decision Making</span>
+        <span class="tag">Supply Chain Optimization</span>
+        <span class="tag">Quality Management</span>
+        <span class="tag">Process Improvement</span>
+        <span class="tag">Manufacturing Analytics</span>
+        <span class="tag">Productivity Analysis</span>
+
+    </div>
+
+</section>
+
+
+<section id="experience">
+
+    <h2>Experience</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Quality Assurance Specialist</h3>
+
+            <p>
+                Pouladir Precision Casting · 2026 – Present
+            </p>
+
+            <p>
+                Quality assurance, IATF 16949 internal audits, NCR/CAPA,
+                KPI reporting, management review preparation, and quality
+                improvement activities.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Industrial Engineering Specialist</h3>
+
+            <p>
+                Pouladir Precision Casting · 2023 – 2026
+            </p>
+
+            <p>
+                Time studies, standard times, production analysis,
+                productivity measurement, KPI development, and
+                data-driven process improvement.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Teaching Assistant</h3>
+
+            <p>
+                Islamic Azad University
+            </p>
+
+            <p>
+                Teaching assistance, student support, presentations,
+                and academic coordination for undergraduate courses.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projects">
+
+    <h2>Research & Projects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Operator Performance & Productivity</h3>
+
+            <p>
+                Data-driven analysis of operator performance and productivity
+                in manufacturing systems.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Overall Labor Effectiveness</h3>
+
+            <p>
+                Application of OLE and Root Cause Analysis for workforce
+                performance improvement.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Arena Simulation</h3>
+
+            <p>
+                Simulation and analysis of a casting production line,
+                focusing on bottlenecks, throughput, utilization, and
+                waiting time.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>EFQM Model</h3>
+
+            <p>
+                Contribution to an EFQM National Model assessment project
+                for a large industrial organization.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>Technical Skills</h2>
+
+    <div class="tags">
+
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">VBA</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Arena</span>
+        <span class="tag">AnyLogic</span>
+        <span class="tag">Microsoft Excel</span>
+        <span class="tag">ISO 9001</span>
+        <span class="tag">IATF 16949</span>
+        <span class="tag">Internal Auditing</span>
+
+    </div>
+
+</section>
+
+
+<section id="contact">
+
+    <h2>Contact</h2>
+
+    <p>
+        I am interested in research opportunities and graduate studies
+        related to industrial engineering, analytics, optimization,
+        operations research, and data-driven decision making.
+    </p>
+
+    <br>
+
+    <div class="buttons">
+
+        <a class="primary" href="mailto:YOUR_EMAIL@example.com">
+            Email Me
+        </a>
+
+        <a class="secondary" href="https://github.com/YOUR_USERNAME">
+            GitHub
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Benjamin Sojdehei · Personal Academic Website
+
+</footer>
+
+</body>
+</html>

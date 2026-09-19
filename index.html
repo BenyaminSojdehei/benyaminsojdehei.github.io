@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,226 +6,438 @@
 
     <title>Benjamin Sojdehei | Industrial Engineering</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <meta name="description"
+          content="Benjamin Sojdehei — Industrial Engineering, Data-Driven Decision Making, Operations Research and Quality.">
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f8fa;
-            color: #1f2937;
-            line-height: 1.7;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #e5e7eb;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #111827;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4b5563;
-            margin-left: 25px;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #2563eb;
-        }
-
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 80px 8%;
-            background: white;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 7vw, 80px);
-            line-height: 1.05;
-            color: #111827;
-            margin-bottom: 25px;
-        }
-
-        .hero h2 {
-            font-size: 25px;
-            font-weight: normal;
-            color: #2563eb;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 700px;
-            font-size: 18px;
-            color: #6b7280;
-            margin-bottom: 35px;
-        }
-
-        .buttons a {
-            display: inline-block;
-            padding: 12px 22px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .primary {
-            background: #2563eb;
-            color: white;
-        }
-
-        .secondary {
-            border: 1px solid #d1d5db;
-            color: #374151;
-            background: white;
-        }
-
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 90px 8%;
-        }
-
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 35px;
-            color: #111827;
-        }
-
-        .about {
-            background: #f7f8fa;
-        }
-
-        .about p {
-            font-size: 17px;
-            color: #4b5563;
-            max-width: 850px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            padding: 28px;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #111827;
-        }
-
-        .card p {
-            color: #6b7280;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            background: #e8eefc;
-            color: #2563eb;
-            padding: 7px 13px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: #111827;
-            color: #9ca3af;
-        }
-
-        @media (max-width: 700px) {
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav a {
-                margin-left: 10px;
-                font-size: 12px;
-            }
-
-            .hero {
-                padding: 60px 7%;
-            }
-
-            section {
-                padding: 65px 7%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">Benjamin Sojdehei</div>
+<header class="navbar">
 
-    <div>
+    <a href="#home" class="logo">
+        BS<span>.</span>
+    </a>
+
+    <nav id="nav">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
         <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
         <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="menu-btn" class="menu-btn">
+        ☰
+    </button>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-left reveal">
+
+        <p class="eyebrow">
+            INDUSTRIAL ENGINEERING · DATA · OPERATIONS · QUALITY
+        </p>
+
+        <h1>
+            Benjamin<br>
+            <span>Sojdehei</span>
+        </h1>
+
+        <p class="hero-description">
+            Industrial Engineering student and Quality Assurance Specialist
+            interested in data-driven decision making, operations research,
+            optimization, and manufacturing performance improvement.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#research" class="button dark">
+                Explore my work
+                <span>↗</span>
+            </a>
+
+            <a href="assets/CV.pdf"
+               target="_blank"
+               class="cv-link">
+                Download CV ↗
+            </a>
+
+        </div>
+
     </div>
-</nav>
 
-<section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-right reveal">
 
-        <h1>Benjamin<br>Sojdehei</h1>
+        <div class="availability">
+            <span></span>
+            Open to research opportunities
+        </div>
+
+        <div class="hero-number">
+            01
+        </div>
+
+        <p>
+            Turning industrial data into
+            practical insight.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+    <div class="section-label">
+        01 / ABOUT
+    </div>
+
+    <div class="about-grid">
 
         <h2>
-            Industrial Engineering · Data-Driven Decision Making · Quality
+            Bridging
+            <em>industrial systems</em>
+            with data-driven thinking.
+        </h2>
+
+        <div class="about-text">
+
+            <p>
+                I am a final-year B.Sc. Industrial Engineering student
+                at Islamic Azad University, Karaj Branch, with professional
+                experience in manufacturing and quality assurance.
+            </p>
+
+            <p>
+                My interests lie at the intersection of operations research,
+                data analytics, productivity improvement, quality management,
+                optimization, and data-driven decision making.
+            </p>
+
+            <a href="#contact" class="arrow-link">
+                Let's connect →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MARQUEE -->
+
+<div class="marquee-container">
+
+    <div class="marquee">
+
+        <span>DATA-DRIVEN DECISION MAKING</span>
+        <b>✦</b>
+
+        <span>OPERATIONS RESEARCH</span>
+        <b>✦</b>
+
+        <span>OPTIMIZATION</span>
+        <b>✦</b>
+
+        <span>PROCESS IMPROVEMENT</span>
+        <b>✦</b>
+
+        <span>MANUFACTURING ANALYTICS</span>
+        <b>✦</b>
+
+    </div>
+
+</div>
+
+
+<!-- EXPERIENCE -->
+
+<section class="section" id="experience">
+
+    <div class="section-label">
+        02 / EXPERIENCE
+    </div>
+
+    <div class="section-title">
+
+        <h2>
+            Professional<br>
+            <em>experience.</em>
         </h2>
 
         <p>
-            Final-year Industrial Engineering student with experience in
-            manufacturing, quality assurance, process improvement, data
-            analysis, and operations research.
+            Hands-on experience across manufacturing,
+            industrial engineering and quality assurance.
         </p>
 
-        <div class="buttons">
-            <a class="primary" href="#research">View My Research</a>
-            <a class="secondary" href="#contact">Get in Touch</a>
+    </div>
+
+
+    <div class="timeline">
+
+
+        <article class="timeline-item reveal">
+
+            <div class="timeline-date">
+                APR 2026 — PRESENT
+            </div>
+
+            <div class="timeline-content">
+
+                <span>
+                    QUALITY ASSURANCE SPECIALIST
+                </span>
+
+                <h3>
+                    Pouladir Precision Casting
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Participating in IATF 16949 internal audit activities.
+                    </li>
+
+                    <li>
+                        Supporting NCR, CAPA and quality documentation.
+                    </li>
+
+                    <li>
+                        Preparing KPI reports for management review.
+                    </li>
+
+                    <li>
+                        Analyzing quality and production performance data.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </article>
+
+
+        <article class="timeline-item reveal">
+
+            <div class="timeline-date">
+                OCT 2023 — MAR 2026
+            </div>
+
+            <div class="timeline-content">
+
+                <span>
+                    INDUSTRIAL ENGINEERING SPECIALIST
+                </span>
+
+                <h3>
+                    Pouladir Precision Casting
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Conducted time studies and developed standard times.
+                    </li>
+
+                    <li>
+                        Developed OPC charts and analyzed production processes.
+                    </li>
+
+                    <li>
+                        Analyzed operator productivity and performance data.
+                    </li>
+
+                    <li>
+                        Developed a VBA-based data collection application.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </article>
+
+
+        <article class="timeline-item reveal">
+
+            <div class="timeline-date">
+                AUG — OCT 2023
+            </div>
+
+            <div class="timeline-content">
+
+                <span>
+                    INDUSTRIAL ENGINEERING INTERN
+                </span>
+
+                <h3>
+                    Pouladir Precision Casting
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Gained hands-on experience with investment casting.
+                    </li>
+
+                    <li>
+                        Observed manufacturing processes and bottlenecks.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section class="dark-section" id="research">
+
+    <div class="section dark-inner">
+
+        <div class="section-label">
+            03 / RESEARCH
+        </div>
+
+        <div class="section-title">
+
+            <h2>
+                Research &<br>
+                <em>publications.</em>
+            </h2>
+
+            <p>
+                Research focused on workforce performance,
+                manufacturing systems and data-driven improvement.
+            </p>
+
+        </div>
+
+
+        <div class="research-list">
+
+
+            <article class="research-card reveal">
+
+                <div class="research-number">
+                    01
+                </div>
+
+                <div>
+
+                    <span>
+                        CONFERENCE PAPER · 2026
+                    </span>
+
+                    <h3>
+                        Application of Overall Labor Effectiveness
+                        (OLE) and Root Cause Analysis for Workforce
+                        Performance Improvement
+                    </h3>
+
+                    <p>
+                        First-author research examining workforce
+                        effectiveness and root causes of performance
+                        gaps in an industrial manufacturing setting.
+                    </p>
+
+                </div>
+
+                <div class="research-arrow">
+                    ↗
+                </div>
+
+            </article>
+
+
+            <article class="research-card reveal">
+
+                <div class="research-number">
+                    02
+                </div>
+
+                <div>
+
+                    <span>
+                        BACHELOR'S THESIS
+                    </span>
+
+                    <h3>
+                        Data-Driven Analysis of Operator Performance
+                        and Productivity in Manufacturing Systems
+                    </h3>
+
+                    <p>
+                        Statistical analysis of operator-level production
+                        data to investigate productivity patterns and
+                        performance differences.
+                    </p>
+
+                </div>
+
+                <div class="research-arrow">
+                    ↗
+                </div>
+
+            </article>
+
+
+            <article class="research-card reveal">
+
+                <div class="research-number">
+                    03
+                </div>
+
+                <div>
+
+                    <span>
+                        RESEARCH IN PROGRESS
+                    </span>
+
+                    <h3>
+                        Optimization & Data-Driven Decision Making
+                    </h3>
+
+                    <p>
+                        Exploring optimization and analytical approaches
+                        for improving industrial decision making.
+                    </p>
+
+                </div>
+
+                <div class="research-arrow">
+                    ↗
+                </div>
+
+            </article>
+
         </div>
 
     </div>
@@ -234,93 +445,260 @@
 </section>
 
 
-<section id="about" class="about">
+<!-- PROJECTS -->
 
-    <h2>About Me</h2>
+<section class="section" id="projects">
 
-    <p>
-        I am a final-year B.Sc. Industrial Engineering student at Islamic
-        Azad University, Karaj Branch. My academic and professional interests
-        lie at the intersection of industrial engineering, data-driven
-        decision making, optimization, quality management, and operational
-        performance improvement.
-    </p>
-
-</section>
+    <div class="section-label">
+        04 / SELECTED PROJECTS
+    </div>
 
 
-<section id="research">
+    <div class="projects-grid">
 
-    <h2>Research Interests</h2>
 
-    <div class="tags">
+        <article class="project-card featured reveal">
 
-        <span class="tag">Operations Research</span>
-        <span class="tag">Optimization</span>
-        <span class="tag">Data-Driven Decision Making</span>
-        <span class="tag">Supply Chain Optimization</span>
-        <span class="tag">Quality Management</span>
-        <span class="tag">Process Improvement</span>
-        <span class="tag">Manufacturing Analytics</span>
-        <span class="tag">Productivity Analysis</span>
+            <div class="project-top">
+                <span>01</span>
+                <span>RESEARCH</span>
+            </div>
+
+            <div>
+
+                <h3>
+                    Operator Performance
+                    Analysis
+                </h3>
+
+                <p>
+                    Data-driven analysis of operator productivity,
+                    performance indicators and variation within
+                    a manufacturing system.
+                </p>
+
+            </div>
+
+            <div class="project-tags">
+
+                <span>Statistics</span>
+                <span>Python</span>
+                <span>Manufacturing</span>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card reveal">
+
+            <div class="project-top">
+                <span>02</span>
+                <span>SIMULATION</span>
+            </div>
+
+            <div>
+
+                <h3>
+                    Investment Casting
+                    Line Simulation
+                </h3>
+
+                <p>
+                    Arena-based simulation examining throughput,
+                    utilization, waiting time and bottlenecks.
+                </p>
+
+            </div>
+
+            <div class="project-tags">
+
+                <span>Arena</span>
+                <span>Operations</span>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card reveal">
+
+            <div class="project-top">
+                <span>03</span>
+                <span>DATA</span>
+            </div>
+
+            <div>
+
+                <h3>
+                    Production & Quality
+                    Performance System
+                </h3>
+
+                <p>
+                    Data collection and analysis workflow for
+                    production and quality performance measurement.
+                </p>
+
+            </div>
+
+            <div class="project-tags">
+
+                <span>SQL</span>
+                <span>VBA</span>
+                <span>KPI</span>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card reveal">
+
+            <div class="project-top">
+                <span>04</span>
+                <span>QUALITY</span>
+            </div>
+
+            <div>
+
+                <h3>
+                    Supplier Performance
+                    Evaluation
+                </h3>
+
+                <p>
+                    Risk-, performance- and QMS-oriented framework
+                    for supplier evaluation and improvement.
+                </p>
+
+            </div>
+
+            <div class="project-tags">
+
+                <span>IATF 16949</span>
+                <span>Risk</span>
+
+            </div>
+
+        </article>
 
     </div>
 
 </section>
 
 
-<section id="experience">
+<!-- EDUCATION -->
 
-    <h2>Experience</h2>
+<section class="section education" id="education">
 
-    <div class="grid">
+    <div class="section-label">
+        05 / EDUCATION & SKILLS
+    </div>
 
-        <div class="card">
 
-            <h3>Quality Assurance Specialist</h3>
+    <div class="education-grid">
 
-            <p>
-                Pouladir Precision Casting · 2026 – Present
-            </p>
 
-            <p>
-                Quality assurance, IATF 16949 internal audits, NCR/CAPA,
-                KPI reporting, management review preparation, and quality
-                improvement activities.
-            </p>
+        <div>
+
+            <h2>
+                Education &<br>
+                <em>credentials.</em>
+            </h2>
+
+            <div class="education-card">
+
+                <span>
+                    2022 — 2026
+                </span>
+
+                <h3>
+                    B.Sc. Industrial Engineering
+                </h3>
+
+                <p>
+                    Islamic Azad University,
+                    Karaj Branch
+                </p>
+
+                <div class="stats">
+
+                    <div>
+                        <strong>16.50/20</strong>
+                        <small>Overall GPA</small>
+                    </div>
+
+                    <div>
+                        <strong>3.85/4.00</strong>
+                        <small>Last 61 Credits</small>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
 
-        <div class="card">
+        <div>
 
-            <h3>Industrial Engineering Specialist</h3>
-
-            <p>
-                Pouladir Precision Casting · 2023 – 2026
-            </p>
-
-            <p>
-                Time studies, standard times, production analysis,
-                productivity measurement, KPI development, and
-                data-driven process improvement.
-            </p>
-
-        </div>
+            <h2>
+                Technical<br>
+                <em>toolkit.</em>
+            </h2>
 
 
-        <div class="card">
+            <div class="skill">
 
-            <h3>Teaching Assistant</h3>
+                <span>
+                    DATA & PROGRAMMING
+                </span>
 
-            <p>
-                Islamic Azad University
-            </p>
+                <p>
+                    Python · SQL Server · VBA · Power BI
+                </p>
 
-            <p>
-                Teaching assistance, student support, presentations,
-                and academic coordination for undergraduate courses.
-            </p>
+            </div>
+
+
+            <div class="skill">
+
+                <span>
+                    OPERATIONS & SIMULATION
+                </span>
+
+                <p>
+                    Operations Research · Arena · AnyLogic · Time Study
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <span>
+                    QUALITY
+                </span>
+
+                <p>
+                    IATF 16949 · ISO 9001 · Internal Audit · RCA · CAPA
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <span>
+                    PROCESS IMPROVEMENT
+                </span>
+
+                <p>
+                    KPI Analysis · Manufacturing Systems · Productivity
+                </p>
+
+            </div>
 
         </div>
 
@@ -329,119 +707,69 @@
 </section>
 
 
-<section id="projects">
+<!-- CONTACT -->
 
-    <h2>Research & Projects</h2>
+<section class="dark-section contact" id="contact">
 
-    <div class="grid">
+    <div class="section dark-inner">
 
-        <div class="card">
-
-            <h3>Operator Performance & Productivity</h3>
-
-            <p>
-                Data-driven analysis of operator performance and productivity
-                in manufacturing systems.
-            </p>
-
+        <div class="section-label">
+            06 / CONTACT
         </div>
 
+        <h2>
+            Let's build something<br>
+            <em>meaningful.</em>
+        </h2>
 
-        <div class="card">
+        <p>
+            Interested in research collaboration, graduate study,
+            operations research, analytics, and data-driven decision making?
+        </p>
 
-            <h3>Overall Labor Effectiveness</h3>
-
-            <p>
-                Application of OLE and Root Cause Analysis for workforce
-                performance improvement.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Arena Simulation</h3>
-
-            <p>
-                Simulation and analysis of a casting production line,
-                focusing on bottlenecks, throughput, utilization, and
-                waiting time.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>EFQM Model</h3>
-
-            <p>
-                Contribution to an EFQM National Model assessment project
-                for a large industrial organization.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section>
-
-    <h2>Technical Skills</h2>
-
-    <div class="tags">
-
-        <span class="tag">Python</span>
-        <span class="tag">SQL</span>
-        <span class="tag">VBA</span>
-        <span class="tag">Power BI</span>
-        <span class="tag">Arena</span>
-        <span class="tag">AnyLogic</span>
-        <span class="tag">Microsoft Excel</span>
-        <span class="tag">ISO 9001</span>
-        <span class="tag">IATF 16949</span>
-        <span class="tag">Internal Auditing</span>
-
-    </div>
-
-</section>
-
-
-<section id="contact">
-
-    <h2>Contact</h2>
-
-    <p>
-        I am interested in research opportunities and graduate studies
-        related to industrial engineering, analytics, optimization,
-        operations research, and data-driven decision making.
-    </p>
-
-    <br>
-
-    <div class="buttons">
-
-        <a class="primary" href="mailto:YOUR_EMAIL@example.com">
-            Email Me
+        <!-- CHANGE YOUR EMAIL -->
+        <a href="mailto:YOUR_EMAIL@example.com"
+           class="email">
+            YOUR_EMAIL@example.com ↗
         </a>
 
-        <a class="secondary" href="https://github.com/YOUR_USERNAME">
-            GitHub
-        </a>
+        <div class="social-links">
+
+            <!-- CHANGE THESE LINKS -->
+
+            <a href="https://www.linkedin.com/"
+               target="_blank">
+                LinkedIn ↗
+            </a>
+
+            <a href="https://github.com/"
+               target="_blank">
+                GitHub ↗
+            </a>
+
+        </div>
 
     </div>
 
 </section>
+
+</main>
 
 
 <footer>
 
-    © 2026 Benjamin Sojdehei · Personal Academic Website
+    <span>
+        © 2026 Benjamin Sojdehei
+    </span>
+
+    <span>
+        Industrial Engineering · Data · Operations
+    </span>
 
 </footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>

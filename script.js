@@ -85,11 +85,12 @@ if (firstTimelineItem) firstTimelineItem.classList.add("open");
 /* Gallery carousel */
 
 (function initGallery() {
-    const gallery = document.getElementById("gallery");
+    const gallery = document.getElementById("gallery-carousel");
     if (!gallery) return;
 
     const slides = Array.from(gallery.querySelectorAll(".gallery-slide"));
     const dotsContainer = document.getElementById("gallery-dots");
+    const captionEl = document.getElementById("gallery-caption");
     const prevBtn = gallery.querySelector(".gallery-prev");
     const nextBtn = gallery.querySelector(".gallery-next");
 
@@ -109,6 +110,7 @@ if (firstTimelineItem) firstTimelineItem.classList.add("open");
         current = (index + slides.length) % slides.length;
         slides.forEach((slide, i) => slide.classList.toggle("active", i === current));
         dots.forEach((dot, i) => dot.classList.toggle("active", i === current));
+        if (captionEl) captionEl.textContent = slides[current].dataset.caption || "";
     }
 
     prevBtn.addEventListener("click", () => goTo(current - 1));

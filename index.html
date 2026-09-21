@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Benjamin Sojdehei | Industrial Engineering</title>
+    <title>Benjamin Sojdehei | Quality & Industrial Engineering</title>
 
     <meta name="description"
-          content="Benjamin Sojdehei — Industrial Engineering, Data-Driven Decision Making, Operations Research and Quality.">
+          content="Benjamin Sojdehei — Quality Assurance & Industrial Engineering. IATF 16949, ISO 9001, process simulation and data-driven manufacturing performance.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
           rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -23,20 +23,22 @@
 <header class="navbar">
 
     <a href="#home" class="logo">
-        BS<span>.</span>
+        B<span>.</span>SOJDEHEI
     </a>
 
     <nav id="nav">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#activities">Activities</a>
     </nav>
 
-    <button id="menu-btn" class="menu-btn">
-        ☰
+    <a href="#contact" class="btn btn-solid nav-contact">Contact</a>
+
+    <button id="menu-btn" class="menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
     </button>
 
 </header>
@@ -48,98 +50,94 @@
 
 <section class="hero" id="home">
 
-    <div class="hero-left reveal">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
 
-        <p class="eyebrow">
-            INDUSTRIAL ENGINEERING · DATA · OPERATIONS · QUALITY
-        </p>
+    <div class="hero-text reveal">
 
         <h1>
             Benjamin<br>
-            <span>Sojdehei</span>
+            <span class="gradient-text">Sojdehei</span>
         </h1>
 
+        <h2 class="hero-role">Quality Assurance &amp; Industrial Engineer</h2>
+
+        <div class="rule"></div>
+
         <p class="hero-description">
-            Industrial Engineering student and Quality Assurance Specialist
-            interested in data-driven decision making, operations research,
-            optimization, and manufacturing performance improvement.
+            Quality Assurance Engineer focused on <strong>IATF&nbsp;16949</strong>,
+            <strong>process simulation</strong>, and
+            <strong>data-driven manufacturing performance</strong>.
+            Combining a TÜV-certified audit background with hands-on
+            experience across investment casting, supplier quality,
+            and industrial time study.
         </p>
 
         <div class="hero-buttons">
-
-            <a href="#research" class="button dark">
-                Explore my work
-                <span>↗</span>
+            <a href="#contact" class="btn btn-solid">Get In Touch</a>
+            <a href="assets/CV.pdf" target="_blank" class="btn btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                Download CV
             </a>
-
-            <a href="assets/CV.pdf"
-               target="_blank"
-               class="cv-link">
-                Download CV ↗
-            </a>
-
         </div>
 
     </div>
 
+    <div class="hero-visual reveal" aria-hidden="true">
+        <svg viewBox="0 0 520 620" class="hero-svg">
+            <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#3B82F6"/>
+                    <stop offset="1" stop-color="#8B5CF6"/>
+                </linearGradient>
+                <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+                    <stop offset="0" stop-color="#3B82F6" stop-opacity="0.35"/>
+                    <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+                </radialGradient>
+                <pattern id="gridpat" width="26" height="26" patternUnits="userSpaceOnUse">
+                    <path d="M26 0H0V26" fill="none" stroke="#233150" stroke-width="1"/>
+                </pattern>
+                <mask id="fadeMask">
+                    <rect width="520" height="620" fill="white"/>
+                    <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0.78" stop-color="white"/>
+                        <stop offset="1" stop-color="black"/>
+                    </linearGradient>
+                    <rect width="520" height="620" fill="url(#fadeGrad)"/>
+                </mask>
+            </defs>
 
-    <div class="hero-right reveal">
+            <circle cx="260" cy="290" r="270" fill="url(#glow)"/>
+            <circle cx="260" cy="290" r="200" fill="url(#gridpat)" opacity="0.55" mask="url(#fadeMask)"/>
 
-        <div class="availability">
-            <span></span>
-            Open to research opportunities
-        </div>
+            <g mask="url(#fadeMask)">
+                <circle cx="260" cy="290" r="150" fill="none" stroke="url(#grad1)" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="260" cy="290" r="112" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.35"/>
 
-        <div class="hero-number">
-            01
-        </div>
+                <!-- gear -->
+                <g transform="translate(260,290)">
+                    <g stroke="url(#grad1)" stroke-width="2" fill="none" opacity="0.9">
+                        <circle r="70"/>
+                        <circle r="30"/>
+                        <g id="teeth"></g>
+                    </g>
+                </g>
 
-        <p>
-            Turning industrial data into
-            practical insight.
-        </p>
+                <!-- checkmark shield -->
+                <g transform="translate(260,290)">
+                    <path d="M0 -78 L58 -50 V6 C58 56 30 88 0 100 C-30 88 -58 56 -58 6 V-50 Z"
+                          fill="#0D1526" stroke="url(#grad1)" stroke-width="2.5"/>
+                    <path d="M-24 6 L-6 26 L28 -18" fill="none" stroke="url(#grad1)" stroke-width="5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
 
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section" id="about">
-
-    <div class="section-label">
-        01 / ABOUT
-    </div>
-
-    <div class="about-grid">
-
-        <h2>
-            Bridging
-            <em>industrial systems</em>
-            with data-driven thinking.
-        </h2>
-
-        <div class="about-text">
-
-            <p>
-                I am a final-year B.Sc. Industrial Engineering student
-                at Islamic Azad University, Karaj Branch, with professional
-                experience in manufacturing and quality assurance.
-            </p>
-
-            <p>
-                My interests lie at the intersection of operations research,
-                data analytics, productivity improvement, quality management,
-                optimization, and data-driven decision making.
-            </p>
-
-            <a href="#contact" class="arrow-link">
-                Let's connect →
-            </a>
-
-        </div>
-
+                <!-- orbiting nodes -->
+                <circle cx="130" cy="150" r="4" fill="#60A5FA"/>
+                <circle cx="400" cy="180" r="3" fill="#8B5CF6"/>
+                <circle cx="410" cy="380" r="4" fill="#60A5FA"/>
+                <circle cx="120" cy="410" r="3" fill="#8B5CF6"/>
+                <circle cx="260" cy="70" r="3" fill="#60A5FA"/>
+            </g>
+        </svg>
     </div>
 
 </section>
@@ -148,167 +146,169 @@
 <!-- MARQUEE -->
 
 <div class="marquee-container">
+    <div class="marquee" id="marquee">
+        <span class="pill">SQL Server</span>
+        <span class="pill">C#</span>
+        <span class="pill">VBA</span>
+        <span class="pill">Arena</span>
+        <span class="pill">AnyLogic</span>
+        <span class="pill">Power BI</span>
+        <span class="pill">ISO 9001</span>
+        <span class="pill">IATF 16949</span>
+        <span class="pill">RCA / 8D</span>
+        <span class="pill">TOPSIS</span>
+    </div>
+</div>
 
-    <div class="marquee">
 
-        <span>DATA-DRIVEN DECISION MAKING</span>
-        <b>✦</b>
+<!-- ABOUT -->
 
-        <span>OPERATIONS RESEARCH</span>
-        <b>✦</b>
+<section class="section" id="about">
 
-        <span>OPTIMIZATION</span>
-        <b>✦</b>
+    <div class="section-label">About</div>
 
-        <span>PROCESS IMPROVEMENT</span>
-        <b>✦</b>
+    <div class="about-grid">
 
-        <span>MANUFACTURING ANALYTICS</span>
-        <b>✦</b>
+        <h2 class="section-heading">
+            Bridging quality systems
+            with <span class="gradient-text">industrial data.</span>
+        </h2>
+
+        <div class="about-text">
+
+            <p>
+                I'm a final-year B.Sc. Industrial Engineering student and
+                Quality Assurance Expert at Pouladir Investment Casting
+                Company, working within IATF 16949 and ISO 9001 frameworks
+                as a TÜV-certified internal auditor.
+            </p>
+
+            <p>
+                My work sits at the intersection of quality management,
+                process simulation, and operations analysis — turning
+                shop-floor data into standard times, root-cause findings,
+                and supplier and productivity models that hold up to
+                scrutiny.
+            </p>
+
+            <div class="about-stats">
+                <div>
+                    <span class="stat-label">Focus</span>
+                    <span class="stat-value">Quality &middot; Simulation &middot; Data</span>
+                </div>
+                <div>
+                    <span class="stat-label">Experience</span>
+                    <span class="stat-value">Investment Casting &middot; Automotive Supply</span>
+                </div>
+            </div>
+
+            <h3 class="competencies-heading">Core Competencies</h3>
+            <div class="tag-row">
+                <span class="tag">IATF 16949 Internal Audit</span>
+                <span class="tag">ISO 9001</span>
+                <span class="tag">Root Cause Analysis</span>
+                <span class="tag">CAPA / NCR</span>
+                <span class="tag">Time Study</span>
+                <span class="tag">Discrete-Event Simulation</span>
+                <span class="tag">Supplier Quality</span>
+                <span class="tag">KPI Reporting</span>
+            </div>
+
+            <p class="about-footnote">
+                Comfortable running internal audits end to end, building
+                Arena/AnyLogic models of casting lines, and turning
+                productivity and supplier data into decision-ready metrics.
+            </p>
+
+        </div>
 
     </div>
 
-</div>
+</section>
 
 
 <!-- EXPERIENCE -->
 
 <section class="section" id="experience">
 
-    <div class="section-label">
-        02 / EXPERIENCE
-    </div>
+    <div class="section-label">Experience</div>
 
     <div class="section-title">
-
-        <h2>
-            Professional<br>
-            <em>experience.</em>
-        </h2>
-
-        <p>
-            Hands-on experience across manufacturing,
-            industrial engineering and quality assurance.
-        </p>
-
+        <h2 class="section-heading">Professional<br>experience.</h2>
+        <p>Click any role to see what it involved.</p>
     </div>
 
+    <div class="timeline" id="timeline">
 
-    <div class="timeline">
-
-
-        <article class="timeline-item reveal">
-
-            <div class="timeline-date">
-                APR 2026 — PRESENT
-            </div>
-
-            <div class="timeline-content">
-
-                <span>
-                    QUALITY ASSURANCE SPECIALIST
-                </span>
-
-                <h3>
-                    Pouladir Precision Casting
-                </h3>
-
+        <article class="timeline-item">
+            <button class="timeline-head">
+                <div class="timeline-date">Mar 2026 — Present</div>
+                <div class="timeline-main">
+                    <span class="timeline-tag">Quality Assurance Expert</span>
+                    <h3>Pouladir Investment Casting Company</h3>
+                </div>
+                <span class="chevron">+</span>
+            </button>
+            <div class="timeline-body">
                 <ul>
-
-                    <li>
-                        Participating in IATF 16949 internal audit activities.
-                    </li>
-
-                    <li>
-                        Supporting NCR, CAPA and quality documentation.
-                    </li>
-
-                    <li>
-                        Preparing KPI reports for management review.
-                    </li>
-
-                    <li>
-                        Analyzing quality and production performance data.
-                    </li>
-
+                    <li>Conduct IATF 16949 internal audits across eleven processes, from checklist design to clause interpretation (Clauses 4–10).</li>
+                    <li>Build and iterate audit checklists in Persian for HR, Management Responsibility, Sales, and supplier control processes.</li>
+                    <li>Support NCR/CAPA documentation and prepare KPI reports for management review.</li>
+                    <li>Developing a formal Supplier Performance Index (SPI) and a four-tier supplier classification model aligned to IATF 8.4.x.</li>
                 </ul>
-
+                <div class="tag-row small">
+                    <span class="tag">IATF 16949</span>
+                    <span class="tag">Internal Audit</span>
+                    <span class="tag">CAPA</span>
+                    <span class="tag">Supplier Quality</span>
+                </div>
             </div>
-
         </article>
 
-
-        <article class="timeline-item reveal">
-
-            <div class="timeline-date">
-                OCT 2023 — MAR 2026
-            </div>
-
-            <div class="timeline-content">
-
-                <span>
-                    INDUSTRIAL ENGINEERING SPECIALIST
-                </span>
-
-                <h3>
-                    Pouladir Precision Casting
-                </h3>
-
+        <article class="timeline-item">
+            <button class="timeline-head">
+                <div class="timeline-date">Oct 2023 — Mar 2026</div>
+                <div class="timeline-main">
+                    <span class="timeline-tag">Industrial Engineering Expert</span>
+                    <h3>Pouladir Investment Casting Company</h3>
+                </div>
+                <span class="chevron">+</span>
+            </button>
+            <div class="timeline-body">
                 <ul>
-
-                    <li>
-                        Conducted time studies and developed standard times.
-                    </li>
-
-                    <li>
-                        Developed OPC charts and analyzed production processes.
-                    </li>
-
-                    <li>
-                        Analyzed operator productivity and performance data.
-                    </li>
-
-                    <li>
-                        Developed a VBA-based data collection application.
-                    </li>
-
+                    <li>Ran production time studies and developed standard times for a foam injection unit.</li>
+                    <li>Built OPC charts and analyzed operator productivity and performance data.</li>
+                    <li>Developed a VBA-based data collection application for shop-floor use.</li>
+                    <li>Co-authored an Arena-based simulation of the investment casting line, identifying near-100% bottlenecks at Zinter furnaces, wax assembly, and 3D printing stations.</li>
                 </ul>
-
+                <div class="tag-row small">
+                    <span class="tag">Time Study</span>
+                    <span class="tag">VBA</span>
+                    <span class="tag">Arena Simulation</span>
+                    <span class="tag">OPC</span>
+                </div>
             </div>
-
         </article>
 
-
-        <article class="timeline-item reveal">
-
-            <div class="timeline-date">
-                AUG — OCT 2023
-            </div>
-
-            <div class="timeline-content">
-
-                <span>
-                    INDUSTRIAL ENGINEERING INTERN
-                </span>
-
-                <h3>
-                    Pouladir Precision Casting
-                </h3>
-
+        <article class="timeline-item">
+            <button class="timeline-head">
+                <div class="timeline-date">2025 — Present</div>
+                <div class="timeline-main">
+                    <span class="timeline-tag">Project-Based Consultant</span>
+                    <h3>Foolad Sirjan · RAN Company · MAPNA Modkaran</h3>
+                </div>
+                <span class="chevron">+</span>
+            </button>
+            <div class="timeline-body">
                 <ul>
-
-                    <li>
-                        Gained hands-on experience with investment casting.
-                    </li>
-
-                    <li>
-                        Observed manufacturing processes and bottlenecks.
-                    </li>
-
+                    <li>Engaged through academic supervision on three independent consulting projects.</li>
+                    <li>Contributed to an EFQM organizational assessment for MAPNA Modkaran.</li>
                 </ul>
-
+                <div class="tag-row small">
+                    <span class="tag">EFQM</span>
+                    <span class="tag">Consulting</span>
+                </div>
             </div>
-
         </article>
 
     </div>
@@ -318,269 +318,66 @@
 
 <!-- RESEARCH -->
 
-<section class="dark-section" id="research">
+<section class="section" id="research">
 
-    <div class="section dark-inner">
+    <div class="section-label">Research</div>
 
-        <div class="section-label">
-            03 / RESEARCH
-        </div>
+    <div class="section-title">
+        <h2 class="section-heading">Research &<br>publications.</h2>
+        <p>Work on workforce effectiveness, simulation, and quality economics.</p>
+    </div>
 
-        <div class="section-title">
+    <div class="research-list">
 
-            <h2>
-                Research &<br>
-                <em>publications.</em>
-            </h2>
-
+        <article class="research-card">
+            <div class="research-status">Published · ICISE 2026</div>
+            <h3>Application of Overall Labor Effectiveness (OLE) and Root Cause Analysis for Workforce Performance Improvement</h3>
             <p>
-                Research focused on workforce performance,
-                manufacturing systems and data-driven improvement.
+                First-author paper presented in person at ICISE 2026. Found an
+                annual average OLE of 81.44% against an ~85% benchmark, with
+                quality as the primary limiting factor (94.08%) and two severe
+                availability drops traced to misaligned incentives and
+                inadequate risk-based planning.
             </p>
-
-        </div>
-
-
-        <div class="research-list">
-
-
-            <article class="research-card reveal">
-
-                <div class="research-number">
-                    01
-                </div>
-
-                <div>
-
-                    <span>
-                        CONFERENCE PAPER · 2026
-                    </span>
-
-                    <h3>
-                        Application of Overall Labor Effectiveness
-                        (OLE) and Root Cause Analysis for Workforce
-                        Performance Improvement
-                    </h3>
-
-                    <p>
-                        First-author research examining workforce
-                        effectiveness and root causes of performance
-                        gaps in an industrial manufacturing setting.
-                    </p>
-
-                </div>
-
-                <div class="research-arrow">
-                    ↗
-                </div>
-
-            </article>
-
-
-            <article class="research-card reveal">
-
-                <div class="research-number">
-                    02
-                </div>
-
-                <div>
-
-                    <span>
-                        BACHELOR'S THESIS
-                    </span>
-
-                    <h3>
-                        Data-Driven Analysis of Operator Performance
-                        and Productivity in Manufacturing Systems
-                    </h3>
-
-                    <p>
-                        Statistical analysis of operator-level production
-                        data to investigate productivity patterns and
-                        performance differences.
-                    </p>
-
-                </div>
-
-                <div class="research-arrow">
-                    ↗
-                </div>
-
-            </article>
-
-
-            <article class="research-card reveal">
-
-                <div class="research-number">
-                    03
-                </div>
-
-                <div>
-
-                    <span>
-                        RESEARCH IN PROGRESS
-                    </span>
-
-                    <h3>
-                        Optimization & Data-Driven Decision Making
-                    </h3>
-
-                    <p>
-                        Exploring optimization and analytical approaches
-                        for improving industrial decision making.
-                    </p>
-
-                </div>
-
-                <div class="research-arrow">
-                    ↗
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section class="section" id="projects">
-
-    <div class="section-label">
-        04 / SELECTED PROJECTS
-    </div>
-
-
-    <div class="projects-grid">
-
-
-        <article class="project-card featured reveal">
-
-            <div class="project-top">
-                <span>01</span>
-                <span>RESEARCH</span>
-            </div>
-
-            <div>
-
-                <h3>
-                    Operator Performance
-                    Analysis
-                </h3>
-
-                <p>
-                    Data-driven analysis of operator productivity,
-                    performance indicators and variation within
-                    a manufacturing system.
-                </p>
-
-            </div>
-
-            <div class="project-tags">
-
-                <span>Statistics</span>
-                <span>Python</span>
-                <span>Manufacturing</span>
-
-            </div>
-
         </article>
 
-
-        <article class="project-card reveal">
-
-            <div class="project-top">
-                <span>02</span>
-                <span>SIMULATION</span>
-            </div>
-
-            <div>
-
-                <h3>
-                    Investment Casting
-                    Line Simulation
-                </h3>
-
-                <p>
-                    Arena-based simulation examining throughput,
-                    utilization, waiting time and bottlenecks.
-                </p>
-
-            </div>
-
-            <div class="project-tags">
-
-                <span>Arena</span>
-                <span>Operations</span>
-
-            </div>
-
+        <article class="research-card">
+            <div class="research-status">In progress · Targeting IJPPM (Q1)</div>
+            <h3>MHCPF: A Man-Hour and Cost-Based Productivity Framework</h3>
+            <p>
+                Converts operator productivity ratios into man-hour equivalents
+                and monetary values, with quality-adjustment via rework
+                deduction.
+            </p>
         </article>
 
-
-        <article class="project-card reveal">
-
-            <div class="project-top">
-                <span>03</span>
-                <span>DATA</span>
-            </div>
-
-            <div>
-
-                <h3>
-                    Production & Quality
-                    Performance System
-                </h3>
-
-                <p>
-                    Data collection and analysis workflow for
-                    production and quality performance measurement.
-                </p>
-
-            </div>
-
-            <div class="project-tags">
-
-                <span>SQL</span>
-                <span>VBA</span>
-                <span>KPI</span>
-
-            </div>
-
+        <article class="research-card">
+            <div class="research-status">In progress</div>
+            <h3>Cost of Quality: External Failure Costs by Metallurgical Defect Type</h3>
+            <p>
+                Co-authored analysis categorizing external failure costs by
+                defect type in investment casting production.
+            </p>
         </article>
 
+        <article class="research-card">
+            <div class="research-status">In progress · Targeting Children and Youth Services Review (Q1)</div>
+            <h3>ISO 9001 Gap Analysis for Children's Rights NGOs</h3>
+            <p>
+                Interdisciplinary gap-analysis framework co-planned for two
+                children's rights NGOs, integrating UN CRC article mapping as
+                a second analytical layer alongside ISO 9001 clauses.
+            </p>
+        </article>
 
-        <article class="project-card reveal">
-
-            <div class="project-top">
-                <span>04</span>
-                <span>QUALITY</span>
-            </div>
-
-            <div>
-
-                <h3>
-                    Supplier Performance
-                    Evaluation
-                </h3>
-
-                <p>
-                    Risk-, performance- and QMS-oriented framework
-                    for supplier evaluation and improvement.
-                </p>
-
-            </div>
-
-            <div class="project-tags">
-
-                <span>IATF 16949</span>
-                <span>Risk</span>
-
-            </div>
-
+        <article class="research-card">
+            <div class="research-status">Modeling · Targeting IJSIMM</div>
+            <h3>Discrete-Event Simulation of an Investment Casting Line</h3>
+            <p>
+                Arena/AnyLogic model of Pouladir's casting line, extended with
+                RCA methods (5 Whys, 8D, Fishbone) and a TOPSIS-based
+                multi-criteria decision framework for scenario analysis.
+            </p>
         </article>
 
     </div>
@@ -588,118 +385,105 @@
 </section>
 
 
-<!-- EDUCATION -->
+<!-- CERTIFICATIONS & EDUCATION -->
 
-<section class="section education" id="education">
+<section class="section" id="certifications">
 
-    <div class="section-label">
-        05 / EDUCATION & SKILLS
+    <div class="section-label">Certifications &amp; Education</div>
+
+    <div class="section-title">
+        <h2 class="section-heading">Credentials.</h2>
+        <p>Formal training behind the audit and analysis work.</p>
     </div>
 
+    <div class="cert-grid">
 
-    <div class="education-grid">
-
-
-        <div>
-
-            <h2>
-                Education &<br>
-                <em>credentials.</em>
-            </h2>
-
-            <div class="education-card">
-
-                <span>
-                    2022 — 2026
-                </span>
-
-                <h3>
-                    B.Sc. Industrial Engineering
-                </h3>
-
-                <p>
-                    Islamic Azad University,
-                    Karaj Branch
-                </p>
-
-                <div class="stats">
-
-                    <div>
-                        <strong>16.50/20</strong>
-                        <small>Overall GPA</small>
-                    </div>
-
-                    <div>
-                        <strong>3.85/4.00</strong>
-                        <small>Last 61 Credits</small>
-                    </div>
-
+        <div class="cert-card education-card">
+            <span class="cert-eyebrow">2022 — 2026</span>
+            <h3>B.Sc. Industrial Engineering</h3>
+            <p>Islamic Azad University, Karaj Branch</p>
+            <div class="stats">
+                <div>
+                    <strong>16.50<small>/20</small></strong>
+                    <small>Overall GPA</small>
                 </div>
-
             </div>
-
         </div>
 
+        <div class="cert-card">
+            <span class="cert-eyebrow">Certification</span>
+            <h3>TÜV-Certified Internal Auditor</h3>
+            <p>IATF 16949 &amp; ISO 9001 internal audit qualification.</p>
+        </div>
 
-        <div>
+        <div class="cert-card">
+            <span class="cert-eyebrow">Certification</span>
+            <h3>ISO 9001</h3>
+            <p>Quality Management Systems.</p>
+        </div>
 
-            <h2>
-                Technical<br>
-                <em>toolkit.</em>
-            </h2>
+        <div class="cert-card">
+            <span class="cert-eyebrow">Certification</span>
+            <h3>IATF 16949</h3>
+            <p>Automotive Quality Management Systems.</p>
+        </div>
 
+        <div class="cert-card">
+            <span class="cert-eyebrow">Coursera</span>
+            <h3>Coursework, University of Pennsylvania</h3>
+            <p>Completed coursework via Coursera.</p>
+        </div>
 
-            <div class="skill">
+        <div class="cert-card">
+            <span class="cert-eyebrow">Coursera</span>
+            <h3>Coursework, University of Munich</h3>
+            <p>Completed coursework via Coursera.</p>
+        </div>
 
-                <span>
-                    DATA & PROGRAMMING
-                </span>
+    </div>
 
-                <p>
-                    Python · SQL Server · VBA · Power BI
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <span>
-                    OPERATIONS & SIMULATION
-                </span>
-
-                <p>
-                    Operations Research · Arena · AnyLogic · Time Study
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <span>
-                    QUALITY
-                </span>
-
-                <p>
-                    IATF 16949 · ISO 9001 · Internal Audit · RCA · CAPA
-                </p>
-
-            </div>
+</section>
 
 
-            <div class="skill">
+<!-- ACTIVITIES -->
 
-                <span>
-                    PROCESS IMPROVEMENT
-                </span>
+<section class="section" id="activities">
 
-                <p>
-                    KPI Analysis · Manufacturing Systems · Productivity
-                </p>
+    <div class="section-label">Activities</div>
 
-            </div>
+    <div class="section-title">
+        <h2 class="section-heading">Beyond the<br>factory floor.</h2>
+        <p>Volunteering and applied academic work outside the day job.</p>
+    </div>
 
+    <div class="activity-grid">
+
+        <div class="activity-card">
+            <h3>NGO Volunteering — Working Children's Rights</h3>
+            <p>
+                Provides management consulting and English instruction to
+                NGOs supporting working children's rights, as both a
+                meaningful commitment and part of building an impactful
+                professional narrative.
+            </p>
+        </div>
+
+        <div class="activity-card">
+            <h3>University Project Course</h3>
+            <p>
+                Bachelor-level project course supervised by Dr. Mina Alavi
+                Naeini at Islamic Azad University of Karaj, with an
+                independently chosen topic.
+            </p>
+        </div>
+
+        <div class="activity-card">
+            <h3>Organizational Culture Questionnaire Analysis</h3>
+            <p>
+                Statistical analysis of organizational culture survey
+                responses across 13 cultural dimensions, with segmented
+                perspective breakdowns.
+            </p>
         </div>
 
     </div>
@@ -709,44 +493,47 @@
 
 <!-- CONTACT -->
 
-<section class="dark-section contact" id="contact">
+<section class="section contact" id="contact">
 
-    <div class="section dark-inner">
+    <div class="section-label">Contact</div>
 
-        <div class="section-label">
-            06 / CONTACT
-        </div>
+    <h2 class="section-heading contact-heading">
+        Let's build something<br>
+        <span class="gradient-text">meaningful.</span>
+    </h2>
 
-        <h2>
-            Let's build something<br>
-            <em>meaningful.</em>
-        </h2>
+    <p class="contact-sub">
+        Open to research collaboration, graduate study, and roles in
+        quality, operations, or data-driven manufacturing.
+    </p>
 
-        <p>
-            Interested in research collaboration, graduate study,
-            operations research, analytics, and data-driven decision making?
-        </p>
+    <div class="contact-grid">
 
-        <!-- CHANGE YOUR EMAIL -->
-        <a href="mailto:YOUR_EMAIL@example.com"
-           class="email">
-            YOUR_EMAIL@example.com ↗
-        </a>
+        <form class="contact-form" id="contact-form">
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-solid">Send</button>
+        </form>
 
-        <div class="social-links">
-
-            <!-- CHANGE THESE LINKS -->
-
-            <a href="https://www.linkedin.com/"
-               target="_blank">
-                LinkedIn ↗
-            </a>
-
-            <a href="https://github.com/"
-               target="_blank">
-                GitHub ↗
-            </a>
-
+        <div class="contact-side">
+            <p class="prefer-email">
+                Prefer email?
+                <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn ↗</a>
+                <a href="https://github.com/" target="_blank">GitHub ↗</a>
+            </div>
         </div>
 
     </div>
@@ -757,15 +544,8 @@
 
 
 <footer>
-
-    <span>
-        © 2026 Benjamin Sojdehei
-    </span>
-
-    <span>
-        Industrial Engineering · Data · Operations
-    </span>
-
+    <span>© 2026 Benjamin Sojdehei</span>
+    <span>Quality &amp; Industrial Engineering</span>
 </footer>
 
 

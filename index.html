@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
           rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
@@ -374,7 +374,7 @@
         <p>Swap these placeholders for your own photos — see comments in the code.</p>
     </div>
 
-    <div class="gallery" id="gallery">
+    <div class="gallery" id="gallery-carousel">
 
         <button class="gallery-arrow gallery-prev" aria-label="Previous photo">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
@@ -383,31 +383,32 @@
         <div class="gallery-track">
 
             <!-- Each slide looks for an image at the path below. If the file
-                 doesn't exist yet, a placeholder with the caption shows instead.
-                 Just drop your photos into /assets/gallery/ using these exact
-                 filenames and they'll appear automatically. -->
+                 doesn't exist yet, a placeholder icon shows instead. Just drop
+                 your photos into /assets/gallery/ using these exact filenames
+                 and they'll appear automatically. Edit data-caption to change
+                 the small caption shown under the photo. -->
 
-            <div class="gallery-slide">
+            <div class="gallery-slide" data-caption="Investment casting line">
                 <img src="assets/gallery/photo-1.jpg" alt="Investment casting line"
                      onerror="this.parentElement.classList.add('is-empty')">
             </div>
 
-            <div class="gallery-slide">
+            <div class="gallery-slide" data-caption="Internal audit walkthrough">
                 <img src="assets/gallery/photo-2.jpg" alt="Internal audit walkthrough"
                      onerror="this.parentElement.classList.add('is-empty')">
             </div>
 
-            <div class="gallery-slide">
+            <div class="gallery-slide" data-caption="Time study on the shop floor">
                 <img src="assets/gallery/photo-3.jpg" alt="Time study on the shop floor"
                      onerror="this.parentElement.classList.add('is-empty')">
             </div>
 
-            <div class="gallery-slide">
+            <div class="gallery-slide" data-caption="Quality inspection">
                 <img src="assets/gallery/photo-4.jpg" alt="Quality inspection"
                      onerror="this.parentElement.classList.add('is-empty')">
             </div>
 
-            <div class="gallery-slide">
+            <div class="gallery-slide" data-caption="With the team at Puladir">
                 <img src="assets/gallery/photo-5.jpg" alt="With the team at Puladir"
                      onerror="this.parentElement.classList.add('is-empty')">
             </div>
@@ -418,8 +419,11 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
 
-        <div class="gallery-dots" id="gallery-dots"></div>
+    </div>
 
+    <div class="gallery-footer">
+        <div class="gallery-dots" id="gallery-dots"></div>
+        <p class="gallery-caption-text" id="gallery-caption"></p>
     </div>
 
 </section>
@@ -658,7 +662,7 @@
 </footer>
 
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 
 </body>
 </html>

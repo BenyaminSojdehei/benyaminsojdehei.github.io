@@ -1,863 +1,664 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --bg: #070B14;
-    --bg-elevated: #0D1526;
-    --bg-elevated-2: #111C33;
-    --border: #1D2A45;
-    --border-soft: #16203A;
-
-    --blue: #3B82F6;
-    --blue-light: #60A5FA;
-    --violet: #8B5CF6;
-
-    --text: #E8ECF4;
-    --text-muted: #8D96AC;
-    --text-dim: #5D6478;
-
-    --radius: 14px;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Inter", sans-serif;
-    line-height: 1.65;
-    font-size: 16px;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-h1, h2, h3, .logo {
-    font-family: "Space Grotesk", sans-serif;
-}
-
-.gradient-text {
-    background: linear-gradient(90deg, var(--blue-light), var(--violet));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-
-/* BUTTONS */
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-
-    padding: 14px 26px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    border-radius: 999px;
-
-    border: 1px solid transparent;
-
-    cursor: pointer;
-
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
-}
-
-.btn-solid {
-    background: var(--blue);
-    color: #fff;
-}
-
-.btn-solid:hover {
-    transform: translateY(-2px);
-    background: #4c8bf7;
-}
-
-.btn-outline {
-    background: transparent;
-    border-color: var(--border);
-    color: var(--text);
-}
-
-.btn-outline:hover {
-    border-color: var(--blue);
-    color: var(--blue-light);
-}
-
-
-/* NAVIGATION */
-
-.navbar {
-    height: 76px;
-    padding: 0 5vw;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-
-    background: rgba(7, 11, 20, 0.82);
-    backdrop-filter: blur(14px);
-
-    border-bottom: 1px solid var(--border-soft);
-}
-
-.logo {
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: .5px;
-    white-space: nowrap;
-}
-
-.logo span {
-    color: var(--blue-light);
-}
-
-.navbar nav {
-    display: flex;
-    gap: 8px;
-    margin-left: auto;
-}
-
-.navbar nav a {
-    font-size: 13.5px;
-    font-weight: 500;
-    color: var(--text-muted);
-    padding: 8px 14px;
-    border-radius: 999px;
-    transition: .2s;
-}
-
-.navbar nav a:hover {
-    color: var(--text);
-    background: var(--bg-elevated-2);
-}
-
-.nav-contact {
-    padding: 10px 22px;
-    font-size: 13.5px;
-}
-
-.menu-btn {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 6px;
-}
-
-.menu-btn span {
-    width: 20px;
-    height: 2px;
-    background: var(--text);
-}
-
-
-/* HERO */
-
-.hero {
-    position: relative;
-    min-height: 100vh;
-
-    padding: 150px 5vw 80px;
-
-    display: grid;
-    grid-template-columns: 1fr 0.85fr;
-    align-items: center;
-    gap: 40px;
-
-    overflow: hidden;
-}
-
-.hero-grid-bg {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(var(--border-soft) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
-    background-size: 44px 44px;
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 35%, black, transparent);
-    mask-image: radial-gradient(ellipse 70% 60% at 30% 35%, black, transparent);
-    opacity: .6;
-    z-index: 0;
-}
-
-.hero-text {
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: clamp(48px, 6.2vw, 84px);
-    line-height: 1.02;
-    letter-spacing: -2.5px;
-    font-weight: 700;
-}
-
-.hero-role {
-    margin-top: 18px;
-    font-size: clamp(18px, 2vw, 24px);
-    font-weight: 500;
-    color: var(--text-muted);
-}
-
-.rule {
-    width: 70px;
-    height: 3px;
-    margin: 22px 0 26px;
-    background: linear-gradient(90deg, var(--blue), var(--violet));
-    border-radius: 3px;
-}
-
-.hero-description {
-    max-width: 560px;
-    font-size: 16.5px;
-    color: var(--text-muted);
-}
-
-.hero-description strong {
-    color: var(--blue-light);
-    font-weight: 600;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 38px;
-}
-
-.hero-visual {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-svg {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-
-/* MARQUEE */
-
-.marquee-container {
-    overflow: hidden;
-    padding: 22px 0;
-    border-top: 1px solid var(--border-soft);
-    border-bottom: 1px solid var(--border-soft);
-    background: var(--bg-elevated);
-}
-
-.marquee {
-    display: flex;
-    width: max-content;
-    gap: 14px;
-    animation: marquee 28s linear infinite;
-}
-
-.pill {
-    padding: 9px 18px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-muted);
-    white-space: nowrap;
-}
-
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-
-/* SECTIONS */
-
-.section {
-    width: min(1140px, 90vw);
-    margin: auto;
-    padding: 110px 0;
-}
-
-.section-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--blue-light);
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border-soft);
-}
-
-.section-heading {
-    font-size: clamp(36px, 4.6vw, 56px);
-    line-height: 1.08;
-    letter-spacing: -1.5px;
-    font-weight: 600;
-}
-
-.section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 30px;
-    padding: 55px 0 50px;
-}
-
-.section-title p {
-    max-width: 280px;
-    color: var(--text-muted);
-    font-size: 14.5px;
-}
-
-
-/* ABOUT */
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 8vw;
-    padding-top: 55px;
-}
-
-.about-text {
-    color: var(--text-muted);
-    font-size: 16px;
-}
-
-.about-text p + p {
-    margin-top: 18px;
-}
-
-.about-stats {
-    display: flex;
-    gap: 50px;
-    margin-top: 34px;
-    padding-top: 26px;
-    border-top: 1px solid var(--border-soft);
-}
-
-.stat-label {
-    display: block;
-    font-size: 11.5px;
-    color: var(--text-dim);
-    margin-bottom: 6px;
-}
-
-.stat-value {
-    display: block;
-    font-size: 14.5px;
-    color: var(--text);
-    font-weight: 500;
-}
-
-.competencies-heading {
-    margin-top: 40px;
-    margin-bottom: 16px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px;
-}
-
-.tag {
-    padding: 8px 14px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 12.5px;
-    color: var(--text-muted);
-}
-
-.tag-row.small .tag {
-    font-size: 11.5px;
-    padding: 6px 12px;
-}
-
-.about-footnote {
-    margin-top: 26px;
-    font-size: 14.5px;
-    color: var(--text-dim);
-}
-
-
-/* TIMELINE */
-
-.subsection-heading {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .5px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    margin: 50px 0 6px;
-}
-
-.timeline:first-of-type {
-    margin-bottom: 10px;
-}
-
-.timeline-item {
-    border-top: 1px solid var(--border-soft);
-}
-
-.timeline-item:last-child {
-    border-bottom: 1px solid var(--border-soft);
-}
-
-.timeline-head {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 0.32fr 1fr 30px;
-    align-items: center;
-    gap: 6vw;
-
-    padding: 34px 0;
-
-    background: none;
-    border: none;
-    color: inherit;
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-}
-
-.timeline-date {
-    color: var(--text-dim);
-    font-size: 12.5px;
-    font-weight: 600;
-}
-
-.timeline-tag {
-    display: block;
-    color: var(--blue-light);
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: .4px;
-    margin-bottom: 8px;
-}
-
-.timeline-main h3 {
-    font-size: 24px;
-    font-weight: 500;
-}
-
-.timeline-location {
-    display: block;
-    margin-top: 6px;
-    font-size: 12.5px;
-    color: var(--text-dim);
-}
-
-.chevron {
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--text-dim);
-    transition: transform .25s ease;
-    justify-self: end;
-}
-
-.timeline-item.open .chevron {
-    transform: rotate(45deg);
-    color: var(--blue-light);
-}
-
-.timeline-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows .3s ease;
-}
-
-.timeline-item.open .timeline-body {
-    grid-template-rows: 1fr;
-}
-
-.timeline-body > * {
-    overflow: hidden;
-}
-
-.timeline-body ul {
-    padding: 0 0 22px 40vw;
-    margin-left: -34vw;
-    color: var(--text-muted);
-    font-size: 14.5px;
-}
-
-.timeline-body li {
-    padding-left: 18px;
-    position: relative;
-}
-
-.timeline-body li + li {
-    margin-top: 9px;
-}
-
-.timeline-body li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--blue);
-}
-
-.timeline-body .tag-row {
-    padding-left: 6vw;
-    padding-bottom: 30px;
-}
-
-
-/* RESEARCH */
-
-.research-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.research-card {
-    padding: 32px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--radius);
-    transition: border-color .25s ease;
-}
-
-.research-card:hover {
-    border-color: var(--border);
-}
-
-.research-status {
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: .4px;
-    color: var(--blue-light);
-    margin-bottom: 14px;
-}
-
-.research-card h3 {
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 1.25;
-    max-width: 780px;
-}
-
-.research-card p {
-    margin-top: 14px;
-    color: var(--text-muted);
-    font-size: 14.5px;
-    max-width: 720px;
-}
-
-
-/* CERTIFICATIONS */
-
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.cert-card {
-    padding: 28px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--radius);
-}
-
-.cert-eyebrow {
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: .3px;
-}
-
-.cert-card h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 10px 0 8px;
-}
-
-.cert-card p {
-    color: var(--text-muted);
-    font-size: 13.5px;
-}
-
-.education-card {
-    grid-column: span 1;
-    background: var(--bg-elevated-2);
-    border-color: var(--border);
-}
-
-.education-card .stats {
-    margin-top: 18px;
-}
-
-.education-card strong {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 26px;
-}
-
-.education-card strong small {
-    font-size: 14px;
-    color: var(--text-dim);
-    font-weight: 400;
-}
-
-.education-card .stats small {
-    display: block;
-    margin-top: 4px;
-    font-size: 10.5px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: .5px;
-}
-
-
-/* ACTIVITIES */
-
-.activity-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.activity-card {
-    padding: 30px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--radius);
-}
-
-.activity-card h3 {
-    font-size: 17px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.activity-card p {
-    color: var(--text-muted);
-    font-size: 14px;
-}
-
-
-/* CONTACT */
-
-.contact-heading {
-    margin: 30px 0 18px;
-}
-
-.contact-sub {
-    color: var(--text-muted);
-    font-size: 15px;
-    max-width: 520px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 8vw;
-    margin-top: 55px;
-}
-
-.form-row {
-    margin-bottom: 20px;
-}
-
-.form-row label {
-    display: block;
-    font-size: 12.5px;
-    color: var(--text-dim);
-    margin-bottom: 8px;
-}
-
-.form-row input,
-.form-row textarea {
-    width: 100%;
-    padding: 13px 16px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text);
-    font-family: inherit;
-    font-size: 14.5px;
-    resize: vertical;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-    outline: none;
-    border-color: var(--blue);
-}
-
-.contact-side {
-    padding-top: 6px;
-}
-
-.prefer-email {
-    color: var(--text-muted);
-    font-size: 14.5px;
-}
-
-.prefer-email a {
-    display: block;
-    margin-top: 10px;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 18px;
-    color: var(--blue-light);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 4px;
-    width: fit-content;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 34px;
-    font-size: 13.5px;
-    font-weight: 600;
-}
-
-.social-links a {
-    color: var(--text-muted);
-}
-
-.social-links a:hover {
-    color: var(--blue-light);
-}
-
-
-/* FOOTER */
-
-footer {
-    background: var(--bg-elevated);
-    color: var(--text-dim);
-    border-top: 1px solid var(--border-soft);
-    padding: 25px 5vw;
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-}
-
-
-/* ANIMATION */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .marquee { animation: none; }
-}
-
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-
-    .navbar nav {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        padding: 20px 5vw;
-        background: var(--bg);
-        flex-direction: column;
-        gap: 4px;
-        border-bottom: 1px solid var(--border-soft);
-    }
-
-    .navbar nav.open {
-        display: flex;
-    }
-
-    .nav-contact {
-        display: none;
-    }
-
-    .menu-btn {
-        display: flex;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding-top: 140px;
-        text-align: left;
-    }
-
-    .hero-visual {
-        order: -1;
-        max-width: 260px;
-        margin: 0 auto 20px;
-    }
-
-    .about-grid,
-    .cert-grid,
-    .activity-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .section-title {
-        display: block;
-    }
-
-    .section-title p {
-        max-width: none;
-        margin-top: 18px;
-    }
-
-    .timeline-head {
-        grid-template-columns: 1fr 24px;
-        gap: 10px;
-    }
-
-    .timeline-date {
-        grid-column: 1 / -1;
-        order: -1;
-        margin-bottom: 6px;
-    }
-
-    .timeline-body ul,
-    .timeline-body .tag-row {
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 8px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Benjamin Sojdehei | Quality & Industrial Engineering</title>
+
+    <meta name="description"
+          content="Benjamin Sojdehei — Quality Assurance & Industrial Engineering. IATF 16949, ISO 9001, process simulation and data-driven manufacturing performance.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+        B<span>.</span>SOJDEHEI
+    </a>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#research">Research</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#activities">Activities</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-solid nav-contact">Contact</a>
+
+    <button id="menu-btn" class="menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+
+    <div class="hero-text reveal">
+
+        <h1>
+            Benjamin<br>
+            <span class="gradient-text">Sojdehei</span>
+        </h1>
+
+        <h2 class="hero-role">Quality Assurance &amp; Industrial Engineer</h2>
+
+        <div class="rule"></div>
+
+        <p class="hero-description">
+            Quality Assurance Engineer focused on <strong>IATF&nbsp;16949</strong>,
+            <strong>process simulation</strong>, and
+            <strong>data-driven manufacturing performance</strong>.
+            Combining a TÜV-certified audit background with hands-on
+            experience across investment casting, supplier quality,
+            and industrial time study.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-solid">Get In Touch</a>
+            <a href="assets/CV.pdf" target="_blank" class="btn btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                Download CV
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-visual reveal" aria-hidden="true">
+        <svg viewBox="0 0 520 620" class="hero-svg">
+            <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#3B82F6"/>
+                    <stop offset="1" stop-color="#8B5CF6"/>
+                </linearGradient>
+                <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+                    <stop offset="0" stop-color="#3B82F6" stop-opacity="0.35"/>
+                    <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+                </radialGradient>
+                <pattern id="gridpat" width="26" height="26" patternUnits="userSpaceOnUse">
+                    <path d="M26 0H0V26" fill="none" stroke="#233150" stroke-width="1"/>
+                </pattern>
+                <mask id="fadeMask">
+                    <rect width="520" height="620" fill="white"/>
+                    <linearGradient id="fadeGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0.78" stop-color="white"/>
+                        <stop offset="1" stop-color="black"/>
+                    </linearGradient>
+                    <rect width="520" height="620" fill="url(#fadeGrad)"/>
+                </mask>
+            </defs>
+
+            <circle cx="260" cy="290" r="270" fill="url(#glow)"/>
+            <circle cx="260" cy="290" r="200" fill="url(#gridpat)" opacity="0.55" mask="url(#fadeMask)"/>
+
+            <g mask="url(#fadeMask)">
+                <circle cx="260" cy="290" r="150" fill="none" stroke="url(#grad1)" stroke-width="1.5" opacity="0.5"/>
+                <circle cx="260" cy="290" r="112" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.35"/>
+
+                <!-- gear -->
+                <g transform="translate(260,290)">
+                    <g stroke="url(#grad1)" stroke-width="2" fill="none" opacity="0.9">
+                        <circle r="70"/>
+                        <circle r="30"/>
+                        <g id="teeth"></g>
+                    </g>
+                </g>
+
+                <!-- checkmark shield -->
+                <g transform="translate(260,290)">
+                    <path d="M0 -78 L58 -50 V6 C58 56 30 88 0 100 C-30 88 -58 56 -58 6 V-50 Z"
+                          fill="#0D1526" stroke="url(#grad1)" stroke-width="2.5"/>
+                    <path d="M-24 6 L-6 26 L28 -18" fill="none" stroke="url(#grad1)" stroke-width="5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+
+                <!-- orbiting nodes -->
+                <circle cx="130" cy="150" r="4" fill="#60A5FA"/>
+                <circle cx="400" cy="180" r="3" fill="#8B5CF6"/>
+                <circle cx="410" cy="380" r="4" fill="#60A5FA"/>
+                <circle cx="120" cy="410" r="3" fill="#8B5CF6"/>
+                <circle cx="260" cy="70" r="3" fill="#60A5FA"/>
+            </g>
+        </svg>
+    </div>
+
+</section>
+
+
+<!-- MARQUEE -->
+
+<div class="marquee-container">
+    <div class="marquee" id="marquee">
+        <span class="pill">SQL Server</span>
+        <span class="pill">C#</span>
+        <span class="pill">VBA</span>
+        <span class="pill">Arena</span>
+        <span class="pill">AnyLogic</span>
+        <span class="pill">Power BI</span>
+        <span class="pill">ISO 9001</span>
+        <span class="pill">IATF 16949</span>
+        <span class="pill">RCA / 8D</span>
+        <span class="pill">TOPSIS</span>
+    </div>
+</div>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+    <div class="section-label">About</div>
+
+    <div class="about-grid">
+
+        <h2 class="section-heading">
+            Bridging quality systems
+            with <span class="gradient-text">industrial data.</span>
+        </h2>
+
+        <div class="about-text">
+
+            <p>
+                I'm a final-year B.Sc. Industrial Engineering student and
+                Quality Assurance Expert at Puladir Investment Casting
+                Company, working within IATF 16949 and ISO 9001 frameworks
+                as a TÜV-certified internal auditor.
+            </p>
+
+            <p>
+                My work sits at the intersection of quality management,
+                process simulation, and operations analysis — turning
+                shop-floor data into standard times, root-cause findings,
+                and supplier and productivity models that hold up to
+                scrutiny.
+            </p>
+
+            <div class="about-stats">
+                <div>
+                    <span class="stat-label">Focus</span>
+                    <span class="stat-value">Quality &middot; Simulation &middot; Data</span>
+                </div>
+                <div>
+                    <span class="stat-label">Experience</span>
+                    <span class="stat-value">Investment Casting &middot; Automotive Supply</span>
+                </div>
+            </div>
+
+            <h3 class="competencies-heading">Core Competencies</h3>
+            <div class="tag-row">
+                <span class="tag">IATF 16949 Internal Audit</span>
+                <span class="tag">ISO 9001</span>
+                <span class="tag">Root Cause Analysis</span>
+                <span class="tag">CAPA / NCR</span>
+                <span class="tag">Time Study</span>
+                <span class="tag">Discrete-Event Simulation</span>
+                <span class="tag">Supplier Quality</span>
+                <span class="tag">KPI Reporting</span>
+            </div>
+
+            <p class="about-footnote">
+                Comfortable running internal audits end to end, building
+                Arena/AnyLogic models of casting lines, and turning
+                productivity and supplier data into decision-ready metrics.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="section" id="experience">
+
+    <div class="section-label">Experience</div>
+
+    <div class="section-title">
+        <h2 class="section-heading">Teaching &amp;<br>professional experience.</h2>
+        <p>Click any role to see what it involved.</p>
+    </div>
+
+    <h3 class="subsection-heading">01 &nbsp;/&nbsp; Teaching Assistant</h3>
+
+    <div class="timeline" id="timeline-ta">
+
+        <article class="timeline-item">
+            <button class="timeline-head">
+                <div class="timeline-date">2024 — 2026</div>
+                <div class="timeline-main">
+                    <span class="timeline-tag">Teaching Assistant — Systems Analysis &amp; Principles of Management</span>
+                    <h3>Islamic Azad University, Karaj Branch</h3>
+                    <span class="timeline-location">Karaj, Iran</span>
+                </div>
+                <span class="chevron">+</span>
+            </button>
+            <div class="timeline-body">
+                <ul>
+                    <li>Served as the primary liaison between the instructor and 30+ students across two undergraduate courses, keeping communication and expectations consistent throughout the term.</li>
+                    <li>Coordinated student presentations and handled course-related academic communications end to end.</li>
+                    <li>Led problem-solving sessions and delivered supplementary instruction for the Systems Analysis course, reinforcing lecture material with applied examples.</li>
+                    <li>Organized an off-campus ISO 9001 training program, independently managing scheduling, participant communication, and financial coordination.</li>
+                </ul>
+                <div class="tag-row small">
+                    <span class="tag">Systems Analysis</span>
+                    <span class="tag">Principles of Management</span>
+                    <span class="tag">Student Coordination</span>
+                    <span class="tag">ISO 9001 Training</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <h3 class="subsection-heading">02 &nbsp;/&nbsp; Professional Experience</h3>
+
+    <div class="timeline" id="timeline-pro">
+
+        <article class="timeline-item">
+            <button class="timeline-head">
+                <div class="timeline-date">Mar 2026 — Present</div>
+                <div class="timeline-main">
+                    <span class="timeline-tag">Quality Assurance Expert</span>
+                    <h3>Puladir Investment Casting Company</h3>
+                    <span class="timeline-location">Karaj, Iran</span>
+                </div>
+                <span class="chevron">+</span>
+            </button>
+            <div class="timeline-body">
+                <ul>
+                    <li>Design and manage quality processes to improve workflow consistency and drive process standardization across the plant.</li>
+                    <li>Design and monitor quality KPIs, delivering analytical reports for management review.</li>
+                    <li>Manage NCRs and coordinate CAPA through root-cause investigation, verification, and closure.</li>
+                    <li>Participate in internal audits under ISO 9001:2015 and IATF 16949:2016, covering clause interpretation and evidence-based findings.</li>
+                    <li>Apply structured problem-solving tools — including 8D, Root Cause Analysis, Pareto Analysis, and Fishbone Diagrams — to resolve recurring quality issues.</li>
+                </ul>
+                <div class="tag-row small">
+                    <span class="tag">ISO 9001:2015</span>
+                    <span class="tag">IATF 16949:2016</span>
+                    <span class="tag">Internal Audit</span>
+                    <span class="tag">NCR / CAPA</span>
+                    <span class="tag">8D</span>
+                    <span class="tag">Root Cause Analysis</span>
+                    <span class="tag">Pareto Analysis</span>
+                    <span class="tag">Fishbone Diagrams</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <button class="timeline-head">
+                <div class="timeline-date">Oct 2023 — Mar 2026</div>
+                <div class="timeline-main">
+                    <span class="timeline-tag">Industrial Engineering Expert</span>
+                    <h3>Puladir Investment Casting Company</h3>
+                    <span class="timeline-location">Karaj, Iran</span>
+                </div>
+                <span class="chevron">+</span>
+            </button>
+            <div class="timeline-body">
+                <ul>
+                    <li>Developed the company's first VBA-based operator performance evaluation system, replacing manual tracking with a standardized, data-driven process.</li>
+                    <li>Reduced operator-related scrap and rework by an estimated 70% through continuous, data-driven performance monitoring.</li>
+                    <li>Conducted time studies, established standard times, and mapped processes using OPC flow charts.</li>
+                    <li>Supported capacity improvement initiatives that maintained comparable output with 30 operators instead of 40 — a 25% labor reduction.</li>
+                </ul>
+                <div class="tag-row small">
+                    <span class="tag">VBA</span>
+                    <span class="tag">Time Study</span>
+                    <span class="tag">OPC Charting</span>
+                    <span class="tag">Performance Monitoring</span>
+                    <span class="tag">Capacity Planning</span>
+                    <span class="tag">Process Mapping</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <button class="timeline-head">
+                <div class="timeline-date">Jul 2023 — Sep 2023</div>
+                <div class="timeline-main">
+                    <span class="timeline-tag">Industrial Engineering Intern</span>
+                    <h3>Puladir Investment Casting Company</h3>
+                    <span class="timeline-location">Karaj, Iran</span>
+                </div>
+                <span class="chevron">+</span>
+            </button>
+            <div class="timeline-body">
+                <ul>
+                    <li>Got hands-on exposure to investment casting manufacturing processes.</li>
+                    <li>Observed production workflow and helped flag process bottlenecks.</li>
+                </ul>
+                <div class="tag-row small">
+                    <span class="tag">Manufacturing Processes</span>
+                    <span class="tag">Excel</span>
+                    <span class="tag">Investment Casting Fundamentals</span>
+                    <span class="tag">Shop-Floor Documentation</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section gallery-section" id="gallery">
+
+    <div class="section-label">Gallery</div>
+
+    <div class="section-title">
+        <h2 class="section-heading">On the<br>factory floor.</h2>
+        <p>Swap these placeholders for your own photos — see comments in the code.</p>
+    </div>
+
+    <div class="gallery" id="gallery">
+
+        <button class="gallery-arrow gallery-prev" aria-label="Previous photo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <div class="gallery-track">
+
+            <!-- Each slide looks for an image at the path below. If the file
+                 doesn't exist yet, a placeholder with the caption shows instead.
+                 Just drop your photos into /assets/gallery/ using these exact
+                 filenames and they'll appear automatically. -->
+
+            <div class="gallery-slide">
+                <img src="assets/gallery/photo-1.jpg" alt="Investment casting line"
+                     onerror="this.parentElement.classList.add('is-empty')">
+            </div>
+
+            <div class="gallery-slide">
+                <img src="assets/gallery/photo-2.jpg" alt="Internal audit walkthrough"
+                     onerror="this.parentElement.classList.add('is-empty')">
+            </div>
+
+            <div class="gallery-slide">
+                <img src="assets/gallery/photo-3.jpg" alt="Time study on the shop floor"
+                     onerror="this.parentElement.classList.add('is-empty')">
+            </div>
+
+            <div class="gallery-slide">
+                <img src="assets/gallery/photo-4.jpg" alt="Quality inspection"
+                     onerror="this.parentElement.classList.add('is-empty')">
+            </div>
+
+            <div class="gallery-slide">
+                <img src="assets/gallery/photo-5.jpg" alt="With the team at Puladir"
+                     onerror="this.parentElement.classList.add('is-empty')">
+            </div>
+
+        </div>
+
+        <button class="gallery-arrow gallery-next" aria-label="Next photo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div class="gallery-dots" id="gallery-dots"></div>
+
+    </div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section class="section" id="research">
+
+    <div class="section-label">Research</div>
+
+    <div class="section-title">
+        <h2 class="section-heading">Research &<br>publications.</h2>
+        <p>Work on workforce effectiveness, simulation, and quality economics.</p>
+    </div>
+
+    <div class="research-list">
+
+        <article class="research-card">
+            <div class="research-status">Published · ICISE 2026</div>
+            <h3>Application of Overall Labor Effectiveness (OLE) and Root Cause Analysis for Workforce Performance Improvement</h3>
+            <p>
+                First-author paper presented in person at ICISE 2026. Found an
+                annual average OLE of 81.44% against an ~85% benchmark, with
+                quality as the primary limiting factor (94.08%) and two severe
+                availability drops traced to misaligned incentives and
+                inadequate risk-based planning.
+            </p>
+        </article>
+
+        <article class="research-card">
+            <div class="research-status">In progress · Targeting IJPPM (Q1)</div>
+            <h3>MHCPF: A Man-Hour and Cost-Based Productivity Framework</h3>
+            <p>
+                Converts operator productivity ratios into man-hour equivalents
+                and monetary values, with quality-adjustment via rework
+                deduction.
+            </p>
+        </article>
+
+        <article class="research-card">
+            <div class="research-status">In progress</div>
+            <h3>Cost of Quality: External Failure Costs by Metallurgical Defect Type</h3>
+            <p>
+                Co-authored analysis categorizing external failure costs by
+                defect type in investment casting production.
+            </p>
+        </article>
+
+        <article class="research-card">
+            <div class="research-status">In progress · Targeting Children and Youth Services Review (Q1)</div>
+            <h3>ISO 9001 Gap Analysis for Children's Rights NGOs</h3>
+            <p>
+                Interdisciplinary gap-analysis framework co-planned for two
+                children's rights NGOs, integrating UN CRC article mapping as
+                a second analytical layer alongside ISO 9001 clauses.
+            </p>
+        </article>
+
+        <article class="research-card">
+            <div class="research-status">Modeling · Targeting IJSIMM</div>
+            <h3>Discrete-Event Simulation of an Investment Casting Line</h3>
+            <p>
+                Arena/AnyLogic model of Puladir's casting line, extended with
+                RCA methods (5 Whys, 8D, Fishbone) and a TOPSIS-based
+                multi-criteria decision framework for scenario analysis.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS & EDUCATION -->
+
+<section class="section" id="certifications">
+
+    <div class="section-label">Certifications &amp; Education</div>
+
+    <div class="section-title">
+        <h2 class="section-heading">Credentials.</h2>
+        <p>Formal training behind the audit and analysis work.</p>
+    </div>
+
+    <div class="cert-grid">
+
+        <div class="cert-card education-card">
+            <span class="cert-eyebrow">2022 — 2026</span>
+            <h3>B.Sc. Industrial Engineering</h3>
+            <p>Islamic Azad University, Karaj Branch</p>
+            <div class="stats">
+                <div>
+                    <strong>16.50<small>/20</small></strong>
+                    <small>Overall GPA</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <span class="cert-eyebrow">Certification</span>
+            <h3>TÜV-Certified Internal Auditor</h3>
+            <p>IATF 16949 &amp; ISO 9001 internal audit qualification.</p>
+        </div>
+
+        <div class="cert-card">
+            <span class="cert-eyebrow">Certification</span>
+            <h3>ISO 9001</h3>
+            <p>Quality Management Systems.</p>
+        </div>
+
+        <div class="cert-card">
+            <span class="cert-eyebrow">Certification</span>
+            <h3>IATF 16949</h3>
+            <p>Automotive Quality Management Systems.</p>
+        </div>
+
+        <div class="cert-card">
+            <span class="cert-eyebrow">Coursera</span>
+            <h3>Coursework, University of Pennsylvania</h3>
+            <p>Completed coursework via Coursera.</p>
+        </div>
+
+        <div class="cert-card">
+            <span class="cert-eyebrow">Coursera</span>
+            <h3>Coursework, University of Munich</h3>
+            <p>Completed coursework via Coursera.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACTIVITIES -->
+
+<section class="section" id="activities">
+
+    <div class="section-label">Activities</div>
+
+    <div class="section-title">
+        <h2 class="section-heading">Beyond the<br>factory floor.</h2>
+        <p>Volunteering and applied academic work outside the day job.</p>
+    </div>
+
+    <div class="activity-grid">
+
+        <div class="activity-card">
+            <h3>NGO Volunteering — Working Children's Rights</h3>
+            <p>
+                Provides management consulting and English instruction to
+                NGOs supporting working children's rights, as both a
+                meaningful commitment and part of building an impactful
+                professional narrative.
+            </p>
+        </div>
+
+        <div class="activity-card">
+            <h3>University Project Course</h3>
+            <p>
+                Bachelor-level project course supervised by Dr. Mina Alavi
+                Naeini at Islamic Azad University of Karaj, with an
+                independently chosen topic.
+            </p>
+        </div>
+
+        <div class="activity-card">
+            <h3>Organizational Culture Questionnaire Analysis</h3>
+            <p>
+                Statistical analysis of organizational culture survey
+                responses across 13 cultural dimensions, with segmented
+                perspective breakdowns.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <div class="section-label">Contact</div>
+
+    <h2 class="section-heading contact-heading">
+        Let's build something<br>
+        <span class="gradient-text">meaningful.</span>
+    </h2>
+
+    <p class="contact-sub">
+        Open to research collaboration, graduate study, and roles in
+        quality, operations, or data-driven manufacturing.
+    </p>
+
+    <div class="contact-grid">
+
+        <form class="contact-form" id="contact-form">
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-solid">Send</button>
+        </form>
+
+        <div class="contact-side">
+            <p class="prefer-email">
+                Prefer email?
+                <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn ↗</a>
+                <a href="https://github.com/" target="_blank">GitHub ↗</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+    <span>© 2026 Benjamin Sojdehei</span>
+    <span>Quality &amp; Industrial Engineering</span>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

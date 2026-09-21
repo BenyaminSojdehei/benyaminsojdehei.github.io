@@ -404,6 +404,19 @@ h1, h2, h3, .logo {
 
 /* TIMELINE */
 
+.subsection-heading {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin: 50px 0 6px;
+}
+
+.timeline:first-of-type {
+    margin-bottom: 10px;
+}
+
 .timeline-item {
     border-top: 1px solid var(--border-soft);
 }

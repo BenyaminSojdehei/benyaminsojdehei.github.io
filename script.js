@@ -82,6 +82,42 @@ if (firstTimelineItem) firstTimelineItem.classList.add("open");
 })();
 
 
+/* Gallery carousel */
+
+(function initGallery() {
+    const gallery = document.getElementById("gallery");
+    if (!gallery) return;
+
+    const slides = Array.from(gallery.querySelectorAll(".gallery-slide"));
+    const dotsContainer = document.getElementById("gallery-dots");
+    const prevBtn = gallery.querySelector(".gallery-prev");
+    const nextBtn = gallery.querySelector(".gallery-next");
+
+    let current = 0;
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className = "gallery-dot";
+        dot.setAttribute("aria-label", `Go to photo ${i + 1}`);
+        dot.addEventListener("click", () => goTo(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.querySelectorAll(".gallery-dot"));
+
+    function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => slide.classList.toggle("active", i === current));
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === current));
+    }
+
+    prevBtn.addEventListener("click", () => goTo(current - 1));
+    nextBtn.addEventListener("click", () => goTo(current + 1));
+
+    goTo(0);
+})();
+
+
 /* Contact form (static site — no backend wired up yet) */
 
 const contactForm = document.getElementById("contact-form");

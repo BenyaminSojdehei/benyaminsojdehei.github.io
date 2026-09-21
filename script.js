@@ -117,6 +117,44 @@ if (firstTimelineItem) firstTimelineItem.classList.add("open");
     nextBtn.addEventListener("click", () => goTo(current + 1));
 
     goTo(0);
+
+    /* Lightbox (click a photo to zoom) */
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    function openLightbox(src, alt) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "";
+        lightbox.classList.add("open");
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove("open");
+        lightboxImg.src = "";
+    }
+
+    slides.forEach(slide => {
+        const img = slide.querySelector("img");
+        if (!img) return;
+        img.addEventListener("click", () => {
+            if (slide.classList.contains("is-empty")) return; // no real photo yet
+            openLightbox(img.src, img.alt);
+        });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightbox) {
+        lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) closeLightbox();
+        });
+    }
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeLightbox();
+    });
 })();
 
 

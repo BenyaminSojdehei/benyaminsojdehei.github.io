@@ -2,68 +2,84 @@
    MOBILE NAVIGATION
 ===================================================== */
 
-const menuButton = document.getElementById("menu-btn");
-const nav = document.getElementById("nav");
+const menuButton =
+    document.getElementById("menu-btn");
+
+const nav =
+    document.getElementById("nav");
+
 
 if (menuButton && nav) {
 
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener(
+        "click",
+        () => {
 
-        const isOpen = nav.classList.toggle("open");
+            const isOpen =
+                nav.classList.toggle("open");
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            String(isOpen)
-        );
 
-    });
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+        }
+    );
 
 
     document
         .querySelectorAll("#nav a")
         .forEach(link => {
 
-            link.addEventListener("click", () => {
+            link.addEventListener(
+                "click",
+                () => {
+
+                    nav.classList.remove("open");
+
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            const clickedNav =
+                nav.contains(event.target);
+
+
+            const clickedButton =
+                menuButton.contains(event.target);
+
+
+            if (
+                !clickedNav &&
+                !clickedButton &&
+                nav.classList.contains("open")
+            ) {
 
                 nav.classList.remove("open");
+
 
                 menuButton.setAttribute(
                     "aria-expanded",
                     "false"
                 );
 
-            });
-
-        });
-
-
-    /* Close mobile navigation when clicking outside */
-
-    document.addEventListener("click", event => {
-
-        const clickedInsideNav =
-            nav.contains(event.target);
-
-        const clickedMenuButton =
-            menuButton.contains(event.target);
-
-
-        if (
-            !clickedInsideNav &&
-            !clickedMenuButton &&
-            nav.classList.contains("open")
-        ) {
-
-            nav.classList.remove("open");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            }
 
         }
-
-    });
+    );
 
 }
 
@@ -79,7 +95,7 @@ const revealElements =
 
 if ("IntersectionObserver" in window) {
 
-    const observer =
+    const revealObserver =
         new IntersectionObserver(
 
             entries => {
@@ -93,12 +109,7 @@ if ("IntersectionObserver" in window) {
                             .add("visible");
 
 
-                        /*
-                         Stop observing after the animation
-                         has run once.
-                        */
-
-                        observer.unobserve(
+                        revealObserver.unobserve(
                             entry.target
                         );
 
@@ -110,7 +121,9 @@ if ("IntersectionObserver" in window) {
 
             {
                 threshold: 0.10,
-                rootMargin: "0px 0px -30px 0px"
+
+                rootMargin:
+                    "0px 0px -30px 0px"
             }
 
         );
@@ -118,16 +131,13 @@ if ("IntersectionObserver" in window) {
 
     revealElements.forEach(element => {
 
-        observer.observe(element);
+        revealObserver.observe(element);
 
     });
 
 }
-else {
 
-    /*
-     Fallback for old browsers.
-    */
+else {
 
     revealElements.forEach(element => {
 
@@ -144,79 +154,85 @@ else {
 ===================================================== */
 
 const timelineItems =
-    document.querySelectorAll(".timeline-item");
+    document.querySelectorAll(
+        ".timeline-item"
+    );
 
 
 timelineItems.forEach(item => {
 
     const head =
-        item.querySelector(".timeline-head");
+        item.querySelector(
+            ".timeline-head"
+        );
 
 
     if (!head) return;
 
 
-    head.addEventListener("click", () => {
+    head.addEventListener(
+        "click",
+        () => {
 
-        const isOpen =
-            item.classList.contains("open");
-
-
-        /*
-         Close other timeline items.
-        */
-
-        timelineItems.forEach(otherItem => {
-
-            if (otherItem === item) return;
-
-
-            otherItem.classList.remove("open");
-
-
-            const otherHead =
-                otherItem.querySelector(
-                    ".timeline-head"
+            const isOpen =
+                item.classList.contains(
+                    "open"
                 );
 
 
-            if (otherHead) {
+            timelineItems.forEach(
+                otherItem => {
 
-                otherHead.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        });
+                    if (
+                        otherItem === item
+                    ) {
+                        return;
+                    }
 
 
-        /*
-         Toggle current item.
-        */
-
-        item.classList.toggle(
-            "open",
-            !isOpen
-        );
+                    otherItem
+                        .classList
+                        .remove("open");
 
 
-        head.setAttribute(
-            "aria-expanded",
-            String(!isOpen)
-        );
+                    const otherHead =
+                        otherItem.querySelector(
+                            ".timeline-head"
+                        );
 
-    });
+
+                    if (otherHead) {
+
+                        otherHead.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            item.classList.toggle(
+                "open",
+                !isOpen
+            );
+
+
+            head.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+        }
+    );
 
 });
 
 
 
-/*
- Open first professional experience
- automatically.
-*/
+/* Open first role automatically */
 
 const firstTimelineItem =
     document.querySelector(
@@ -231,15 +247,15 @@ if (firstTimelineItem) {
         .add("open");
 
 
-    const firstTimelineHead =
+    const firstHead =
         firstTimelineItem.querySelector(
             ".timeline-head"
         );
 
 
-    if (firstTimelineHead) {
+    if (firstHead) {
 
-        firstTimelineHead.setAttribute(
+        firstHead.setAttribute(
             "aria-expanded",
             "true"
         );
@@ -251,13 +267,15 @@ if (firstTimelineItem) {
 
 
 /* =====================================================
-   GENERATE GEAR TEETH
+   HERO GEAR
 ===================================================== */
 
 (function drawGearTeeth() {
 
     const teethGroup =
-        document.getElementById("teeth");
+        document.getElementById(
+            "teeth"
+        );
 
 
     if (!teethGroup) return;
@@ -281,7 +299,10 @@ if (firstTimelineItem) {
     ) {
 
         const angle =
-            (i / toothCount)
+            (
+                i /
+                toothCount
+            )
             *
             Math.PI
             *
@@ -304,8 +325,7 @@ if (firstTimelineItem) {
             Math.cos(angle)
             *
             (
-                radius
-                +
+                radius +
                 toothLength
             );
 
@@ -314,8 +334,7 @@ if (firstTimelineItem) {
             Math.sin(angle)
             *
             (
-                radius
-                +
+                radius +
                 toothLength
             );
 
@@ -351,7 +370,9 @@ if (firstTimelineItem) {
         );
 
 
-        teethGroup.appendChild(line);
+        teethGroup.appendChild(
+            line
+        );
 
     }
 
@@ -360,80 +381,7 @@ if (firstTimelineItem) {
 
 
 /* =====================================================
-   CONTACT FORM
-===================================================== */
-
-/*
- IMPORTANT:
-
- This website is hosted as a static site,
- so JavaScript alone cannot send email.
-
- For now, this prevents a visitor from
- receiving a false "message sent" confirmation.
-
- Later you can connect the form to:
- - Formspree
- - EmailJS
- - Web3Forms
- - A serverless backend
-*/
-
-const contactForm =
-    document.getElementById("contact-form");
-
-
-if (contactForm) {
-
-    contactForm.addEventListener(
-
-        "submit",
-
-        event => {
-
-            event.preventDefault();
-
-
-            const submitButton =
-                contactForm.querySelector(
-                    "button[type='submit']"
-                );
-
-
-            if (!submitButton) return;
-
-
-            const originalLabel =
-                submitButton.textContent;
-
-
-            submitButton.textContent =
-                "Form service not connected";
-
-
-            submitButton.disabled = true;
-
-
-            setTimeout(() => {
-
-                submitButton.textContent =
-                    originalLabel;
-
-
-                submitButton.disabled = false;
-
-            }, 2200);
-
-        }
-
-    );
-
-}
-
-
-
-/* =====================================================
-   ACTIVE NAVIGATION LINK
+   ACTIVE NAVIGATION
 ===================================================== */
 
 const sections =
@@ -449,10 +397,8 @@ const navigationLinks =
 
 
 if (
-    "IntersectionObserver" in window
-    &&
-    sections.length
-    &&
+    "IntersectionObserver" in window &&
+    sections.length &&
     navigationLinks.length
 ) {
 
@@ -477,17 +423,16 @@ if (
                     navigationLinks.forEach(
                         link => {
 
-                            const matches =
+                            const target =
                                 link.getAttribute(
                                     "href"
-                                )
-                                ===
-                                `#${sectionId}`;
+                                );
 
 
                             link.classList.toggle(
                                 "active",
-                                matches
+                                target ===
+                                `#${sectionId}`
                             );
 
                         }
@@ -498,7 +443,10 @@ if (
             },
 
             {
-                threshold: 0.35
+                rootMargin:
+                    "-30% 0px -55% 0px",
+
+                threshold: 0
             }
 
         );
@@ -506,8 +454,237 @@ if (
 
     sections.forEach(section => {
 
-        navigationObserver.observe(section);
+        navigationObserver.observe(
+            section
+        );
 
     });
+
+}
+
+
+
+/* =====================================================
+   IMAGE LIGHTBOX
+===================================================== */
+
+const galleryImages =
+    document.querySelectorAll(
+        ".gallery-image"
+    );
+
+
+const photoLightbox =
+    document.getElementById(
+        "photo-lightbox"
+    );
+
+
+const photoLightboxImage =
+    document.getElementById(
+        "photo-lightbox-image"
+    );
+
+
+const photoLightboxClose =
+    document.getElementById(
+        "photo-lightbox-close"
+    );
+
+
+function openPhotoLightbox(image) {
+
+    if (
+        !photoLightbox ||
+        !photoLightboxImage
+    ) {
+        return;
+    }
+
+
+    photoLightboxImage.src =
+        image.src;
+
+
+    photoLightboxImage.alt =
+        image.alt;
+
+
+    photoLightbox
+        .classList
+        .add("open");
+
+
+    photoLightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closePhotoLightbox() {
+
+    if (!photoLightbox) {
+        return;
+    }
+
+
+    photoLightbox
+        .classList
+        .remove("open");
+
+
+    photoLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    document.body.style.overflow =
+        "";
+
+
+    if (photoLightboxImage) {
+
+        photoLightboxImage.src = "";
+
+    }
+
+}
+
+
+galleryImages.forEach(
+    image => {
+
+        image.addEventListener(
+            "click",
+            () => {
+
+                openPhotoLightbox(
+                    image
+                );
+
+            }
+        );
+
+    }
+);
+
+
+if (photoLightboxClose) {
+
+    photoLightboxClose
+        .addEventListener(
+            "click",
+            closePhotoLightbox
+        );
+
+}
+
+
+if (photoLightbox) {
+
+    photoLightbox
+        .addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    photoLightbox
+                ) {
+
+                    closePhotoLightbox();
+
+                }
+
+            }
+        );
+
+}
+
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            closePhotoLightbox();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+const contactForm =
+    document.getElementById(
+        "contact-form"
+    );
+
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        event => {
+
+            event.preventDefault();
+
+
+            const submitButton =
+                contactForm.querySelector(
+                    "button[type='submit']"
+                );
+
+
+            if (!submitButton) {
+                return;
+            }
+
+
+            const originalLabel =
+                submitButton.textContent;
+
+
+            submitButton.textContent =
+                "Form service not connected";
+
+
+            submitButton.disabled =
+                true;
+
+
+            setTimeout(
+                () => {
+
+                    submitButton.textContent =
+                        originalLabel;
+
+
+                    submitButton.disabled =
+                        false;
+
+                },
+
+                2200
+            );
+
+        }
+    );
 
 }

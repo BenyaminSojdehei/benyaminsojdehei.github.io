@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benyaminsojdehei.github.io/sitemap.xml

@@ -1672,6 +1672,56 @@ h4,
 }
 
 
+.research-photos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+    max-width: 760px;
+
+    margin-top: 22px;
+}
+
+
+.research-photo-item {
+    height: 220px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--border-soft);
+
+    border-radius: 12px;
+
+    background:
+        var(--bg-elevated-2);
+}
+
+
+.research-photo-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    cursor: zoom-in;
+
+    transition:
+        transform .5s ease;
+}
+
+
+.research-photo-item:hover img {
+    transform:
+        scale(1.035);
+}
+
+
 .research-metrics {
     display: flex;
     flex-wrap: wrap;
@@ -2319,6 +2369,11 @@ footer {
         max-width: none;
 
         margin-left: 0;
+    }
+
+
+    .research-photos {
+        grid-template-columns: 1fr;
     }
 
 
